@@ -7,7 +7,8 @@
 (go|to|exit|if|then|else|case|endcase|while|do|endwhile|repeat|until|loop|forever|for|by|endfor|input|output|array|node|call|return|stop|end|procedure)   { printf("<KEYWORD,%s>\n", yytext); }
 [\+\-\/\*\^]   { printf("<ARITHMETIC OPERATOR,%s>\n", yytext); }
 (and|or|not)   { printf("<LOGICAL OPERATOR,%s>\n", yytext); }
-(!=|=|<=|>=|<|>)   { printf("<RELATIONAL OPERATOR,%s>\n", yytext); }
+(!=|:=|==|<=|>=|<|>)   { printf("<RELATIONAL OPERATOR,%s>\n", yytext); }
+=   { printf("<ASSIGNMENT OPERATOR,%s>\n", yytext); }
 (mod|log2)   { printf("<MISCELLANEOUS OPERATOR,%s>\n", yytext); }
 [():;,\[\]]  { printf("<PUNCTUATOR,%s>\n", yytext); }
 '([^']*)'   { printf("<STRING CONSTANT,%s>\n", yytext); }
